@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .box {
+            width: 500px;
+            margin: 200px auto;
+            position: relative;
+        }
+
+        .outer {
+            overflow: hidden;
+        }
+
+        .con {
+            width: 4000px;
+            display: flex;
+
+        }
+
+        .con img {
+            width: 520px;
+            height: 300px;
+        }
+
+        .left {
+            width: 40px;
+            height: 40px;
+            background-color: pink;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            line-height: 35px;
+            text-align: center;
+            top: 50%;
+            left: 0;
+            position: absolute;
+            font-size: 40px;
+            color: purple;
+        }
+
+        .right {
+            width: 40px;
+            height: 40px;
+            background-color: pink;
+            border-radius: 50%;
+            transform: translateY(-50%);
+            line-height: 35px;
+            text-align: center;
+            top: 50%;
+            right: 0;
+            position: absolute;
+            font-size: 40px;
+            color: purple;
+        }
+
+        .list {
+            display: flex;
+            position: absolute;
+            transform: translateX(-50%);
+            bottom: 20px;
+            left: 50%;
+
+        }
+
+        .list li {
+            width: 15px;
+            height: 15px;
+            background-color: pink;
+            border-radius: 50%;
+            margin: 0 10px;
+        }
+
+        .list .active {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="outer">
+            <div class="con">
+                <img src="../img/02.jpg">
+                <img src="../img/03.jpg">
+                <img src="../img/04.jpg">
+                <img src="../img/05.jpg">
+                <img src="../img/06.jpg">
+                <img src="../img/02.jpg">
+            </div>
+            <div class="left">&lt</div>
+            <div class="right">&gt</div>
+            <ul class="list">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        var v = 0;
+        var ChanTimer = null;
+        var MoveTimer = null;
+
+        var Ocon = document.querySelector('.outer')
+        var OImg = document.querySelectorAll('.con img')
+        var Oleft = document.querySelector('.left')
+        var Oright = document.querySelector('.right')
+        var Olists = document.querySelectorAll('.list li')
+        function Move() {
+            var StratLcation = Ocon.scrollLeft;
+            var EndLcation = v * OImg[0].offsetWidth;
+            var StratStep = 0;
+            var EndStep = 80;
+            var EveryStep = (EndLcation - StratLcation) / (EndStep - StratStep)
+
+            MoveTimer = setInterval(function () {
+                StratLcation += EveryStep;
+                StratStep++
+                if (StratStep > EndStep) {
+                    clearInterval(MoveTimer);
+                }
+                Ocon.scrollLeft = StratLcation;
+            }, 10)
+        }
+
+        function auto() {
+            ChanTimer = setInterval(function () {
+                clearInterval(MoveTimer)
+                // clearInterval(ChanTimer)
+                v++;
+                if (v >= OImg.length) {
+                    v = 1;
+                    Ocon.scrollLeft = 0;
+                }
+
+                Move();
+                list();
+
+            }, 2000)
+
+        }
+        auto();
+
+        Oright.onclick = function () {
+            clearInterval(MoveTimer)
+            clearInterval(ChanTimer)
+            v++;
+            if (v >= OImg.length) {
+                v = 1;
+                Ocon.scrollLeft = 0;
+            }
+            Move();
+            list();
+            auto();
+        }
+        Oleft.onclick = function () {
+            clearInterval(MoveTimer)
+            clearInterval(ChanTimer)
+            v--
+            if (v < 0) {
+                v = OImg.length - 2
+                Ocon.scrollLeft = (OImg.length - 1) * OImg[0].offsetWidth
+            }
+            Move();
+            list();
+            auto();
+        }
+
+        Olists.forEach(function (item, index) {
+            item.onclick = function () {
+                Olists.forEach(function (item, index) {
+                    item.classList.remove('active')
+                })
+                item.classList.add('active')
+
+                v++;
+                clearInterval(MoveTimer)
+                clearInterval(ChanTimer)
+
+                v = index;
+                Ocon.scrollLeft = v * OImg[0].offsetWidth;
+                Move();
+                list();
+                auto();
+            }
+        })
+
+        function list() {
+            Olists.forEach(function (item, index) {
+                var i = v;
+                if (i === 5) {
+                    i = 0;
+                }
+                if (index === i) {
+                    item.classList.add("active");
+                } else {
+                    item.classList.remove("active");
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    html,
+    body {
+        overflow: hidden;
+        height: 100%;
+    }
+
+    .outer {
+        height: 100%;
+    }
+
+    .hcao {
+        position: fixed;
+        right: 0;
+        top: 0;
+        width: 20px;
+        background-color: purple;
+        height: 100%;
+    }
+
+    .hkuai {
+        position: absolute;
+        width: 20px;
+        height: 60px;
+        background-color: red;
+        top: 0;
+    }
+</style>
+
+<body>
+    <div class="outer">
+        <div class="con"></div>
+
+        <div class="hcao">
+            <div class="hkuai"></div>
+        </div>
+    </div>
+
+    <script>
+        Ocon = document.querySelector('.con')
+        Ohcao = document.querySelector('.hcao')
+        Ohkuai = document.querySelector('.hkuai')
+
+        for (var i = 0; i < 300; i++) {
+            Ocon.innerHTML += i + '<br>'
+        }
+
+        Ohkuai.onmousedown = function (e) {
+            e.preventDefault();
+            var Gotop = e.offsetY;
+            document.onmousemove = function (e) {
+                e.preventDefault();
+                var Maxtop = e.clientY - Gotop
+
+                if (Maxtop <= 0) {
+                    Maxtop = 0
+                } else if (Maxtop >= Ohcao.offsetHeight - Ohkuai.offsetHeight) {
+                    Maxtop = Ohcao.offsetHeight - Ohkuai.offsetHeight
+                }
+                Ohkuai.style.top = Maxtop + 'px'
+
+                //内容的高度-文档的高度/滑槽的高度-滑块的高度
+                var sacle = (Ocon.offsetHeight - document.documentElement.clientHeight) / (Ohcao.clientHeight - Ohkuai.offsetHeight)
+                var move = Maxtop * sacle;
+                Ocon.style.transform = "translateY(" + -move + "px)";
+
+
+            }
+
+            document.onmouseup = function () {
+                console.log(1)
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+        }
+        document.onmousewheel = fn;
+        document.addEventListener("DOMMouseScroll", fn);
+        function fn(e) {
+            var kuaiLcation = Ohkuai.offsetTop;
+            if (e.wheelDelta) {
+                if (e.wheelDelta < 0) {
+                    kuaiLcation += 10;
+                } else {
+                    kuaiLcation -= 10;
+                }
+
+            }
+            if (e.detail) {
+                if (e.detail < 0) {
+                    kuaiLcation -= 10;
+                } else {
+                    kuaiLcation += 10;
+                }
+            }
+
+
+            if (kuaiLcation <= 0) {
+                kuaiLcation = 0;
+            } else if (kuaiLcation >= Ohcao.offsetHeight - Ohkuai.offsetHeight) {
+                kuaiLcation = Ohcao.offsetHeight - Ohkuai.offsetHeight;
+            }
+            Ohkuai.style.top = kuaiLcation + 'px'
+
+            //内容的高度-文档的高度/滑槽的高度-滑块的高度
+            var sacle = (Ocon.offsetHeight - document.documentElement.clientHeight) / (Ohcao.clientHeight - Ohkuai.offsetHeight)
+            var move = kuaiLcation * sacle;
+            Ocon.style.transform = "translateY(" + -move + "px)";
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script>
+        var Obox = document.getElementById('box')
+        var num = 0;
+        var count = 0;
+        var Timer=null;
+        var Win = {
+            x: document.documentElement.clientWidth,
+            y: document.documentElement.clientHeight
+        }
+        var Moveright = true;//定义一个开关
+        var Movetop = true;
+        document.onclick = function () {
+            clearInterval(Timer)
+            Timer=setInterval(function () {
+                if (Moveright) {
+                    num++;
+                    if (num >= Win.x - Obox.offsetWidth) {
+                        Moveright = !Moveright
+                    }
+                } else {
+                    num--;
+                    if (num <= 0) {
+                        Moveright = !Moveright
+                    }
+                }
+
+                if (Movetop) {
+                    count++;
+                    if (count >= Win.y - Obox.offsetHeight) {
+                        Movetop = !Movetop
+                    }
+                } else {
+                    count--;
+                    if (count <= 0) {
+                        Movetop = !Movetop
+                    
+                    }
+                }
+                Obox.style.left = num + "px";
+                Obox.style.top = count + "px";
+            })
+
+        }
+    </script>
+</body>
+
+</html>

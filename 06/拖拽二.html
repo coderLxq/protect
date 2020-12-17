@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script>
+        var Obox = document.getElementById('box')
+
+        Obox.onmousedown = function (e) {
+            //获取鼠标到目标元素的边缘距离
+            var mouse = {
+                x: e.offsetX,
+                y: e.offsetY
+            };
+            document.onmousemove = function (e) {
+                //移动的时候clientx在移动
+                var ele = {
+                    x: e.clientX - mouse.x,
+                    y: e.clientY - mouse.y 
+
+                }
+                //获取窗口的宽度和高度
+                var Win = {
+                    x: document.documentElement.clientWidth,
+                    y: document.documentElement.clientHeight
+                }
+                if (ele.x <= 0) {
+                    ele.x = 0;
+                }
+                if (ele.x >= Win.x - Obox.offsetWidth){
+                    ele.x=Win.x - Obox.offsetWidth
+                }
+                if (ele.y <= 0) {
+                    ele.y = 0;
+                }
+                if (ele.y >= Win.y - Obox.offsetHeight){
+                    ele.y=Win.y - Obox.offsetHeight
+                }
+                    Obox.style.left = ele.x + 'px'
+                Obox.style.top = ele.y + 'px'
+            }
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

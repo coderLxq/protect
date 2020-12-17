@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script>
+        var Obox = document.getElementById('box')
+
+        Obox.onmousedown = function (e) {
+            var mouse = {
+                x: e.clientX,
+                y: e.clientY
+            };
+            var strat = {
+                x: Obox.offsetLeft,
+                y: Obox.offsetTop
+            }
+            document.onmousemove = function (e) {
+                var ele = {
+                    x: e.clientX - mouse.x + strat.x,
+                    y: e.clientY - mouse.y + strat.y
+
+                }
+                var Win = {
+                    x: document.documentElement.clientWidth,
+                    y: document.documentElement.clientHeight
+                }
+                if (ele.x <= 0) {
+                    ele.x = 0;
+                }
+                if (ele.x >= Win.x - Obox.offsetWidth){
+                    ele.x=Win.x - Obox.offsetWidth
+                }
+                if (ele.y <= 0) {
+                    ele.y = 0;
+                }
+                if (ele.y >= Win.y - Obox.offsetHeight){
+                    ele.y=Win.y - Obox.offsetHeight
+                }
+                    Obox.style.left = ele.x + 'px'
+                Obox.style.top = ele.y + 'px'
+            }
+            document.onmouseup = function () {
+                document.onmousemove = null;
+                document.onmouseup = null;
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn">变色</button>
+    <ul class="box">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+        var Obtn = document.getElementById('btn')
+        var Obox = document.querySelectorAll('.box li')
+
+        Obox.forEach(function (item, index) {
+            item.onclick = function () {
+                item.setAttribute('change', 'aaa')
+            }
+
+        })
+
+        Obtn.onclick = function () {
+            Obox.forEach(function (item, index) {
+                if (item.getAttribute('change')) {
+                    item.style.background = 'pink'
+                }
+            })
+        }
+
+    </script>
+</body>
+
+</html>

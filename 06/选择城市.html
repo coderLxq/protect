@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            list-style: none;
+            padding: 0;
+        }
+
+        p {
+            width: 250px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            background-color: pink;
+        }
+
+        #list {
+            flex-wrap: wrap;
+            display: flex;
+            width: 250px;
+            background-color: purple;
+            display: none;
+        }
+
+        #list li {
+            margin: 0 20px;
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2 id="city">深圳</h2>
+    <div class="con">
+        <p id="choose">请选择城市</p>
+        <ul id="list">
+            <li>北京</li>
+            <li>上海</li>
+            <li>广州</li>
+            <li>成都</li>
+            <li>武汉</li>
+            <li>哈尔滨</li>
+            <li>天津</li>
+            <li>珠海</li>
+            <li>杭州</li>
+            <li>苏州</li>
+        </ul>
+    </div>
+    <script>
+        var Ocity = document.getElementById('city');
+        var Olist = document.getElementById('list')
+
+        document.onclick=function(e){
+            if(e.target.id==='choose'){
+                Olist.style.display='flex'
+            }
+            if(e.target.nodeName==='LI'&&e.target.parentNode.id==='list'){
+                Ocity.textContent=e.target.textContent;
+                Olist.style.display='none'
+            }
+            if(e.target.id!=='choose'){
+                Olist.style.display='none'
+            }
+        }
+    </script>
+</body>
+
+</html>

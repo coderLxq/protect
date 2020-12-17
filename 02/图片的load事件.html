@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="../img/1.jpg" id="img">
+
+    <script>
+        var Oimg = document.getElementById('img')
+
+        console.log(Oimg.offsetHeight)//0
+        
+        //图片加载完就执行
+        Oimg.onload=function(){
+            console.log(Oimg.offsetHeight)//356
+        }
+    </script>
+</body>
+</html>

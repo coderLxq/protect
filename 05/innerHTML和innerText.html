@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">按钮</button>
+    <div class="box">
+        <a href="##">哈哈</a>
+    </div>
+
+    <script>
+        var Obtn = document.getElementById('btn')
+        var Obox = document.querySelector('.box')
+
+        Obtn.onclick=function(){
+            // console.log(Obox.innerHTML)
+            // //改变标签
+            // Obox.innerHTML='<h1>呵呵</h1>'
+
+            
+            console.log(Obox.innerText);
+
+            //改变标签的内容
+            Obox.innerText='呵呵'
+        }
+    </script>
+</body>
+</html>

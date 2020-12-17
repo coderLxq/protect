@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box"></div>
+
+    <script>
+        var Obox = document.querySelector('.box')
+
+        var x = 0;//左右
+        var y = 0;//上下
+
+        var moveTop = false;
+        var moveBottmom = false;
+        var moveLeft = false;
+        var moveRight = false;
+
+        setInterval(function () {
+            if (moveLeft) {
+                x--;
+            }
+            if (moveRight) {
+                x++;
+            }
+            if (moveTop) {
+                y--;
+            }
+            if (moveBottmom) {
+                y++;
+            }
+            Obox.style.left = x + 'px'
+            Obox.style.top = y + 'px'
+        },1)
+
+        document.onkeydown = function (e) {
+            switch (e.keyCode) {
+                case 37:
+                    moveLeft = true;
+                    break;
+                case 38:
+                    moveTop = true;
+                    break;
+                case 39:
+                    moveRight = true;
+                    break;
+                case 40:
+                    moveBottmom = true;
+                   
+            }
+        }
+        document.onkeyup = function (e) {
+            switch (e.keyCode) {
+                case 37:
+                    moveLeft = false;
+                    break;
+                case 38:
+                    moveTop = false;
+                    break;
+                case 39:
+                    moveRight = false;
+                    break;
+                case 40:
+                    moveBottmom = false;
+                   
+            }
+        }
+    </script>
+</body>
+
+</html>

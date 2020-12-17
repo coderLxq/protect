@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>哈哈哈哈</p>
+</body>
+
+<script>
+    document.oncontextmenu = function () {
+        return false;
+    }
+
+    document.onkeydown = function (e) {
+        if (e.ctrlKey && e.keyCode === 67) {
+            return false;
+        }
+    }
+</script>
+
+</html>

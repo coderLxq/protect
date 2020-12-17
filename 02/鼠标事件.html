@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        var Obox = document.getElementById('box')
+
+        //鼠标按下事件
+        Obox.onmousedown = function () {
+            Obox.style.backgroundColor = 'red'
+        }
+        //鼠标抬起事件
+        Obox.onmouseup = function () {
+            Obox.style.backgroundColor = 'yellow'
+        }
+
+        var lastTime = 0;//定义一个初始时间
+        Obox.onmousemove = function () {
+            var Nowtime = Date.now();//获取当前时间
+            var time = Nowtime - lastTime;//计算和上次的时间差
+            //计算好差值之后，把这一次的时间变成lastTime
+            lastTime = Nowtime;
+            console.log(time)
+        }
+    </script>
+</body>
+
+</html>

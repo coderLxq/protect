@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="###" class="Message">
+        <h2>新增鱼儿</h2>
+        <div>
+            <label>
+                姓名：
+                <input type="text" id="name">
+            </label>
+        </div>
+        <div>
+            <label>
+                性别
+                <input type="text" id="sex">
+            </label>
+        </div>
+        <div>
+            <label>
+                年龄
+                <input type="text" id="age">
+            </label>
+        </div>
+
+        <button type="button" id="btn">添加</button>
+    </form>
+    <table width='888' border="1" style="border-collapse: collapse;" class="tab">
+        <caption>静哥的鱼塘 </caption>
+        <tr>
+            <th>姓名</th>
+            <th>性别</th>
+            <th>年龄</th>
+            <th>操作</th>
+        </tr>
+        <tr id="second" class="All">
+            <td id="first">小美</td>
+            <td id="four">男</td>
+            <td id="three">18</td>
+            <td> <a href="###">删除</a> </td>
+        </tr>
+    </table>
+    <script>
+        var Obtn = document.getElementById('btn')
+        var Osecond = document.getElementById('second')
+        var Oname = document.getElementById('name')
+        var Osex = document.getElementById('sex')
+        var Oage = document.getElementById('age')
+        var Otab = document.querySelector('.tab')
+        var Ofirst = document.getElementById('first')
+        var Ofour = document.getElementById('four')
+        var Othree = document.getElementById('three')
+        var Oall = document.querySelectorAll('.All tr a')
+        var oDeles = document.querySelectorAll('table tr a')
+      
+
+        Obtn.onclick = function () {
+            var username = Oname.value;
+            var usersex = Osex.value;
+            var userage = Oage.value;
+    
+            var newTr = Osecond.cloneNode(true);
+            Otab.appendChild(newTr);
+
+            Ofirst.textContent=username;
+            Ofour.textContent=usersex;
+            Othree.textContent=usersex;
+            
+          
+            oDeles.forEach(function(item,index){
+                item.onclick = function () {
+                item.parentNode.parentNode.parentNode.removeChild(item.parentNode.parentNode)
+            }
+        })
+
+    }
+    
+         
+       
+    
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        #box {
+            width: 600px;
+            margin: 50px auto;
+            border: 1px solid black;
+        }
+
+        #left {
+            width: 200px;
+            height: 300px;
+            float: left;
+            background-color: pink
+        }
+
+        #right {
+            width: 200px;
+            height: 300px;
+            float: right;
+            background-color: yellow
+        }
+
+        #btn {
+            float: left;
+            width: 200px;
+            height: 300px;
+            text-align: center;
+            background-color: rebeccapurple;
+        }
+
+        #Lbtn,
+        #Rbtn {
+            background-color: yellowgreen;
+        }
+
+        .color {
+            background-color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <ul id="left">
+            <li>左边内容一</li>
+            <li>左边内容二</li>
+            <li>左边内容三</li>
+            <li>左边内容四</li>
+            <li>左边内容五</li>
+        </ul>
+        <div id="btn">
+            <button id="Lbtn">>>>>>>></button>
+            <button id="Rbtn">
+                <<<<<<< </button>
+        </div>
+        <ul id="right">
+            <li>右边内容一</li>
+            <li>右边内容二</li>
+            <li>右边内容三</li>
+            <li>右边内容四</li>
+            <li>右边内容五</li>
+        </ul>
+    </div>
+    <script>
+        var Oleft = document.getElementById('left')
+        var Oright = document.getElementById('right')
+        var OleftList = document.querySelectorAll('#left li')
+        var OrightList = document.querySelectorAll('#right li')
+        var Olbtn = document.getElementById('Lbtn')
+        var Orbtn = document.getElementById('Rbtn')
+
+        OleftList.forEach(function (item, index) {
+            item.onclick = function () {
+                item.classList.add('color')
+                item.setAttribute('change', 'true')
+            }
+        })
+
+        OrightList.forEach(function (item, index) {
+            item.onclick = function () {
+                item.classList.add('color')
+                item.setAttribute('change', 'true')
+            }
+        })
+
+        Olbtn.onclick = function () {
+            OleftList.forEach(function (item, index) {
+                if (item.getAttribute('change')) {
+                    item.classList.remove('color')
+                    item.removeAttribute('change')
+
+                    Oright.appendChild(item);
+                }
+            })
+        }
+
+        Orbtn.onclick = function () {
+            OrightList.forEach(function (item, index) {
+                if (item.getAttribute('change')) {
+                    item.classList.remove('color')
+                    item.removeAttribute('change')
+
+                    Oleft.appendChild(item);
+                }
+            })
+        }
+    </script>
+</body>
+
+</html>

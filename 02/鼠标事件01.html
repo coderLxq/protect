@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        #box{
+            width: 400px;
+            height: 400px;
+            background-color: red;
+            overflow: hidden;
+        }
+        #box p{
+            height: 200px;
+            margin: 100px 0;
+            background-color:yellow;
+        }
+    </style>
+<body>
+    <div id="box">
+        <p></p>
+    </div>
+    <script>
+        var Obox = document.getElementById('box');
+
+        // //鼠标移入会触发冒泡
+        // Obox.onmouseover=function(){
+        //     console.log('鼠标移入')
+        // }
+        // //鼠标移出会触发冒泡
+        // Obox.onmouseout=function(){
+        //     console.log('鼠标移出')
+        // }
+
+        Obox.onmouseenter=function(){
+            console.log('鼠标移入')
+        }
+        Obox.onmouseleave=function(){
+            console.log('鼠标移出')
+        }
+    </script>
+</body>
+</html>

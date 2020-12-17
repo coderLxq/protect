@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+          #box{
+            width: 400px;
+            height: 400px;
+            background-color: purple;
+        }
+        #con{
+            width: 100px;
+            height: 100px;
+            background: red;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="con"></div>
+    </div>
+
+    <script>
+         /* 
+            clientX:事件发生位置 到 浏览器视口边缘的距离
+            offsetX:事件发生位置 到 目标元素边缘的距离
+            pageX: 事件发生位置 到 文档边缘的距离(ie8不兼容)
+            screenX：事件发生位置 到 电脑屏幕边缘的距离
+        
+        */
+        var Obox = document.getElementById('box')
+
+        Obox.onclick=function(e){
+            console.log(e.clientX);
+            console.log(e.offsetX);
+            console.log(e.pageX);
+            console.log(e.screenX)
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="box">
+        <textarea id="text"></textarea>
+        <p>还可以输入<span id="num">40</span>字</p>
+    </div>
+
+    <script>
+        var Otext = document.getElementById('text');
+        var Onum = document.getElementById('num');
+
+        Otext.onkeyup = function () {
+            var Otextlength = Otext.value.length;
+            var count = 40 - Otextlength;
+            // if(count<0){
+            //     Otext.style.color='red'
+            // }else{
+            //     Otext.style.color='black'
+            // }
+            if(count<0){
+                Otext.value=Otext.value.substr(0,40)
+            }
+            Onum.textContent=count;
+        }
+    </script>
+</body>
+
+</html>

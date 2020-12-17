@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            background-color: yellow;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+
+    <script>
+        var Obox = document.getElementById('box');
+
+        Obox.onclick = function () {
+            console.log('单击')
+        }
+
+        Obox.ondblclick = function () {
+            console.log('双击')
+        }
+
+        Obox.oncontextmenu = function () {
+            console.log('右键')
+            //右键单击的时候，会默认有菜单，可以阻止默认事件
+            //阻止默认事件方法
+            return false
+        }
+    </script>
+</body>
+
+</html>

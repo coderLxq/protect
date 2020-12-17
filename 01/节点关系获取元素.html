@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul id="box">
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+
+    <script>
+        var Obox = document.getElementById('box');
+        var Oboxs = Obox.getElementsByTagName('li');
+        //获取li的父元素
+        console.log(Oboxs[0].parentNode);
+        //获取ul的第一个子节点
+        console.log(Obox.firstChild);//第一个子节点为空格
+        //获取ul的第一个字元素
+        console.log(Obox.firstElementChild);
+
+        //获取第一个子元素,考虑兼容性问题
+        function getfirst(obj) {
+            if (obj.firstElementChild) {
+                return obj.firstElementChild;
+            } else {
+                return obj.firstChild;
+            }
+        }
+        var a = getfirst(Obox);
+        console.log(a)
+         //获取最后一个子元素
+         function getlast(obj) {
+            if (obj.lastElementChild) {
+                return obj.lastElementChild;
+            } else {
+                return obj.lastChild;
+            }
+        }
+        var a = getlast(Obox);
+        console.log(a)
+
+          //获取下一个兄弟元素
+          function getNext(obj) {
+            if (obj.nextElementSibling) {
+                return obj.nextElementSibling;
+            } else {
+                return obj.nextSibling;
+            }
+        }
+        var a = getNext(Oboxs[0]);
+        console.log(a)
+
+         //获取上一个兄弟元素
+         function getPer(obj) {
+            if (obj.previousElementSibling) {
+                return obj.previousElementSibling;
+            } else {
+                return obj.previouSibling;
+            }
+        }
+        var a = getPer(Oboxs[1]);
+        console.log(a)
+    </script>
+</body>
+
+</html>

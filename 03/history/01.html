@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>页面一</h1>
+    <a href="./02.html">页面二</a>
+    <a href="./03.html">页面三</a>
+    <button id="btn">进</button>
+    <button id="btn1">退</button>
+    <button id="btn2">退2</button>
+
+    <script>
+        var Obtn = document.getElementById('btn')
+        var Obtn1 = document.getElementById('btn1')
+        var Obtn2 = document.getElementById('btn2')
+
+        Obtn.onclick = function () {
+            history.forward();
+        }
+        Obtn1.onclick = function () {
+            history.back();
+        }
+        Obtn2.onclick = function () {
+            history.go(-2)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box{
+            width: 400px;
+            height: 400px;
+            background-color: purple;
+        }
+        #con{
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+        <div id="con"></div>
+    </div>
+
+    <script>
+        var Obox = document.getElementById('box');
+        var Ocon = document.getElementById('con')
+
+        Ocon.onmousedown=function(){
+            console.log('鼠标按下')
+        }
+
+        Ocon.onmouseup=function(){
+            console.log('鼠标抬起')
+        }
+        //阻止鼠标点击
+        Ocon.onclick=function(e){
+            e.stopPropagation();  
+        }
+
+        Obox.onclick=function(){
+            console.log('鼠标点击')
+        }
+    </script>
+</body>
+</html>

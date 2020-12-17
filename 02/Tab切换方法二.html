@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .box {
+        width: 600px;
+        height: 300px;
+        border: 1px solid black;
+        margin: 50px auto;
+    }
+
+    .box li {
+        width: 200px;
+        height: 80px;
+        line-height: 80px;
+        text-align: center;
+        float: left;
+        list-style: none;
+        border: 1px solid black;
+        box-sizing: border-box;
+    }
+
+    .box1 {
+        margin-top: 80px;
+        background-color: yellowgreen;
+    }
+
+    .box li.tab {
+        background-color: pink;
+    }
+
+    .box1 section {
+        height: 220px;
+        font-size: 40px;
+        text-align: center;
+        line-height: 220px;
+        display: none;
+
+    }
+
+    .box1 section.show {
+        display: block;
+    }
+</style>
+
+<body>
+    <ul class="box">
+        <li class="tab">标题一</li>
+        <li>标题二</li>
+        <li>标题三</li>
+
+        <div class="box1">
+            <section class="show">内容一</section>
+            <section>内容二</section>
+            <section>内容三</section>
+        </div>
+    </ul>
+
+    <script>
+        var Otab = document.querySelectorAll('.box li')
+        var Oshow = document.querySelectorAll('.box1 section')
+
+
+        for (var i = 0; i < Otab.length; i++) {
+            Otab[i].index = i;
+            Otab[i].onclick = function () {
+                for (var i = 0; i < Otab.length; i++) {
+                    Otab[i].classList.remove('tab');
+                    Oshow[i].classList.remove('show');
+                }
+                this.classList.add('tab')
+                  //中括号中填写的是下标，填写的是当前点击元素（this）的下标
+                Oshow[this.index].classList.add('show')
+            }
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>节点互换练习</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #outer{
+            width: 700px;
+            margin: 50px auto;
+            border: 1px solid #000;
+            overflow: hidden;
+        }
+        #con1{
+            width: 300px;
+            height: 400px;
+            float: left;
+            background-color: #4c71ff;
+        }f
+        #con2{
+            width: 300px;
+            height: 400px;
+            float: right;
+            background-color: #4c71ff;
+        }
+        #controls{
+            width: 100px;
+            height: 400px;
+            float: left;
+            background-color: #2ba5eb;
+            text-align: center;
+        }
+        #con1 .red,#con2 .red{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div id="outer">
+        <ul id="con1">
+            <li>我是con1的内容1</li>
+            <li>我是con1的内容2</li>
+            <li>我是con1的内容3</li>
+            <li>我是con1的内容4</li>
+        </ul>
+        <div id="controls">
+            <button id="right">>>>>>>></button>
+            <button id="left"><<<<<<<</button>
+        </div>
+        <ul id="con2">
+            <li>我是con2的内容1</li>
+            <li>我是con2的内容2</li>
+            <li>我是con2的内容3</li>
+            <li>我是con2的内容4</li>
+        </ul>
+    </div>
+    <script>
+        var oCon1 = document.getElementById("con1");
+        var oCon2 = document.getElementById("con2");
+        var oRight = document.getElementById("right");
+        var oLeft = document.getElementById("left");
+        var oCon1Lis = oCon1.getElementsByTagName("li");
+        var oCon2Lis = oCon2.getElementsByTagName("li");
+
+        // 给所有的oCon1中的li绑定点击事件，点击以后颜色发生变化，并且被选中
+        for (var i = 0; i < oCon1Lis.length; i++) {
+            oCon1Lis[i].onclick = function () {
+                this.className = "red";
+                // 我们给选中的元素一个标记（设置自定义属性 change=true）
+                this.setAttribute("change","true");
+            }
+        }
+
+        // 给oRight绑定点击事件 让选中的左边元素向右移动
+        oRight.onclick = function () {
+            //遍历所有的左边的li  判断哪一个被选中了
+            for (var i = 0; i < oCon1Lis.length; i++) {
+                // 判断哪一个li拥有change属性
+                if (oCon1Lis[i].getAttribute("change")) {
+                    //移动过去的元素 需要把颜色 自定义属性全部还原
+                    oCon1Lis[i].className = "";
+                    oCon1Lis[i].removeAttribute("change");
+
+                    //把当前遍历的li给移动到oCon2中
+                    oCon2.appendChild(oCon1Lis[i]);
+                    // 因为移动过元素之后，后边的元素下标全部向上提一位，所以i要减1
+                    i --;
+
+                }
+            }
+        }
+
+        // 给所有的oCon2中的li绑定点击事件，点击以后颜色发生变化，并且被选中
+        for (var i = 0; i < oCon2Lis.length; i++) {
+            oCon2Lis[i].onclick = function () {
+                this.className = "red";
+                // 我们给选中的元素一个标记（设置自定义属性 change=true）
+                this.setAttribute("change","true");
+            }
+        }
+
+        // 给oLeft绑定点击事件 让选中的右边元素向左移动
+        oLeft.onclick = function () {
+            //遍历所有的左边的li  判断哪一个被选中了
+            for (var i = 0; i < oCon2Lis.length; i++) {
+                // 判断哪一个li拥有change属性
+                if (oCon2Lis[i].getAttribute("change")) {
+                    //移动过去的元素 需要把颜色 自定义属性全部还原
+                    oCon2Lis[i].className = "";
+                    oCon2Lis[i].removeAttribute("change");
+
+                    //把当前遍历的li给移动到oCon2中
+                    oCon1.appendChild(oCon2Lis[i]);
+                    // 因为移动过元素之后，后边的元素下标全部向上提一位，所以i要减1
+                    i --;
+
+                }
+            }
+        }
+    </script>
+</body>
+</html>

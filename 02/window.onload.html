@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+     <script>
+         //window.onload 可以写在任何位置，不用考虑代码执行顺序
+         //window.onload如果在后面在调用会被后面的覆盖
+         window.onload=function(){
+             var Obox = document.getElementById('box');
+             console.log(Obox)
+
+             var Oimg = document.getElementById('img')
+             console.log(Oimg);
+             console.log(Oimg.offsetHeight)
+         }
+     </script>
+<body>
+    <div id="box">
+        <img src="../img/1.jpg" id="img">
+    </div>
+</body>
+</html>

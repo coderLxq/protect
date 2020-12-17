@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 3000px;
+        }
+
+        .top {
+            width: 143px;
+            height: 151px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background-image: url(../img/01.png);
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="top"></div>
+    </div>
+
+    <script>
+        var Obox = document.querySelector('.box')
+        var Otop = document.querySelector('.top')
+
+        window.onscroll = function () {
+            if (window.pageYOffset > 500) {
+                Otop.style.display = "block";
+            } else {
+                Otop.style.display = "none";
+            }
+        }
+
+        Otop.onclick = function(){
+            window.scrollTo(0,0)
+        }
+    </script>
+</body>
+
+</html>

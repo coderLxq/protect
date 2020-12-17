@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="outer">
+        <div id="inner">
+            <div id="con">con</div>
+        </div>
+    </div>
+
+    <script>
+        Oouter = document.getElementById('outer')
+        Oinner = document.getElementById('inner')
+        Ocon = document.getElementById('con')
+
+        Oouter.addEventListener('click',function(){
+            alert('outer')
+        })
+
+        Oinner.addEventListener('click',function(e){
+            alert('inner')
+            e.stopPropagation();
+        })
+
+        Ocon.addEventListener('click',function(){
+            alert('ocon')
+             
+        })
+
+        document.addEventListener('click',function(){
+            alert('document')
+        })
+    </script>
+</body>
+</html>

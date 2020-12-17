@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var url = 'http://www.baidu.com:80?user=laoli&pass=123456';
+
+        var obj = {};
+        url.split('?')[1].split('&').forEach(function (item, index) {
+            var key = item.split('=')[0];
+            var value = item.split('=')[1];
+
+            obj[key] = value
+        })
+        console.log(obj)
+
+        var userInfo = {
+            user: "laoli",
+            pass: 123456
+        }
+        var url = "http://www.baidu.com:80?";
+        for (var key in userInfo) {
+            var str = key + "=" + userInfo[key] + "&";
+            url = url + str;
+        }
+        console.log(url.slice(0, -1))
+    </script>
+</body>
+
+</html>

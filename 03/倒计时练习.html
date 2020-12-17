@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="con">敌军还有5秒到达战场</h1>
+
+    <script>
+        var Ocon = document.getElementById('con')
+
+        var num = 5;
+        var timer = setInterval(function () {
+            num--;
+            if (num == 0) {
+                clearInterval(timer);
+                Ocon.textContent = '全军出击'
+                return;
+            }
+            Ocon.textContent = '敌军还有' + num + '到达战场'
+        }, 1000)
+
+
+    </script>
+</body>
+
+</html>

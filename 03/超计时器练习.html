@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 400px;
+            margin: 50px auto 0;
+            position: relative;
+        }
+
+        .title {
+            width: 100%;
+            background-color: pink;
+            height: 40px;
+        }
+
+        #con {
+            width: 100%;
+            background-color: rebeccapurple;
+            height: 300px;
+            position: absolute;
+            top: 40px;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <h2 class="title"></h2>
+        <div id="con"></div>
+    </div>
+
+    <script>
+        var Obox = document.getElementById('box')
+        var Ocon = document.getElementById('con')
+        var timer = null;
+        Obox.onmouseenter = function () {
+            //当在规定的消失时间又移入，就不会消失，所以需要清除计时器
+            clearInterval(timer)
+            Ocon.style.display = 'block';
+        }
+
+        Obox.onmouseleave = function () {
+            //设置计时器
+            timer = setInterval(function () {
+                Ocon.style.display = 'none'
+            }, 1000)
+
+        }
+    </script>
+</body>
+
+</html>

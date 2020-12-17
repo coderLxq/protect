@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul li{
+            list-style: none;
+            flex: 1;/* 简写的三个值 flex-grow:1 ;
+                        flex-basis 0;
+                        flex-shrink:1 ;*/
+            border: 1px solid black;
+        
+        }
+        ul{
+            width: 600px;
+            height: 200px;
+            border: 1px solid black;
+            display: flex;
+        }
+        ul li:nth-child(odd){
+            background-color: purple;
+            flex-grow: 1;
+        }
+        ul li:nth-child(even){
+            background-color: pink;
+            flex-grow: 1;
+        }
+        
+    </style>
+</head>
+<body>
+    <ul>
+        <li>1</li>
+        <li>222</li>
+        <li>333</li>
+        <li>4444444</li>
+    </ul>
+</body>
+</html>

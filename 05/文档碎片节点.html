@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul class="box">
+
+    </ul>
+</body>
+<script>
+    var Obox = document.querySelector('.box')
+
+    document.onclick = function () {
+        //创建一个文档碎片节点
+        var Doc = document.createDocumentFragment();
+        for (var i = 0; i <= 100; i++) {
+            var newLi = document.createElement('li')
+            newLi.innerHTML='Hello'
+
+            //把新创建的li放入文档碎片节点中
+            Doc.appendChild(newLi);
+        }
+            //把文档碎片中的li一次性放到ul里面
+            Obox.appendChild(Doc);
+            console.log(Doc);
+    }
+</script>
+
+</html>

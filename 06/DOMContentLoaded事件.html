@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //等待页面中的节点和使用的资源全部加载完成，才执行事件
+        window.onload = function () {
+            console.log(Oimg)
+            console.log(Oimg.offsetWidth);//450
+        }
+
+        window.addEventListener("DOMContentLoaded",function(){
+            console.log(Oimg)
+            console.log(Oimg.offsetWidth);//0
+        })
+    </script>
+</head>
+
+<body>
+    <img id="img" src="../img/03.jpg">
+
+
+
+    <script>
+        Oimg = document.getElementById('img')
+        console.log(Oimg)
+        console.log(Oimg.offsetWidth);//0
+
+        //等待页面中的DOM节点和使用的资源全部加载完成，才执行事件
+        window.onload = function () {
+            console.log(Oimg)
+            console.log(Oimg.offsetWidth);//450
+        }
+
+        //当DOM节点加载完成以后就执行 不再等待资源，是DOM2级事件 必须事件处理函数绑定
+        window.addEventListener("DOMContentLoaded",function(){
+            console.log(Oimg)
+            console.log(Oimg.offsetWidth);//0
+        })
+    </script>
+</body>
+
+</html>

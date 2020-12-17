@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //location对象是关于浏览器的地址
+        console.log(location)
+
+        document.onclick = function () {
+
+            //定向跳转
+            //    location.href="http://www.baidu.com"
+
+            //锚点部分包括前面的#好
+            console.log(location.hash);
+
+            //主机和端口名称
+            console.log(location.host);
+
+            //端口
+            console.log(location.port);
+
+            //协议名称
+            console.log(location.protocol)
+
+            //路径名称
+            console.log(location.pathname);
+
+            //url的查询部分，包括前导问号
+            console.log(location.search)
+
+            //定向跳转
+            // location.assign("http://www.baidu.com")
+
+            //刷新当前页面
+            location.reload();
+
+            //替换当前页面
+            location.replace("http://www.baidu.com")
+        }
+    </script>
+</body>
+
+</html>

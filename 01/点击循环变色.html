@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #box{
+        width: 100px;
+        height: 100px;
+        background-color: red;
+    }
+</style>
+<body>
+    <div id='box'></div>
+    <script>
+        // //第一种方法
+        // var Obox = document.getElementById('box')
+        // var count=0;//计算器
+        // Obox.onclick=function(){
+        //     count++;//点击一次加1
+        //     //判断coun是否为偶数
+        //     if(count%2===0){
+        //         Obox.style.background='yellow'
+        //     }else{
+        //         Obox.style.background='blue'
+        //     }
+        // }
+        
+
+        //第二种方法
+        var Obox = document.getElementById('box')
+        var a = true;//设置一个标识
+        Obox.onclick=function(){
+            //点击一次就换一次标识
+            a=!a;
+            if(a){//如果为true
+                Obox.style.background='yellow'
+            }else{
+                Obox.style.background='blue'
+            }
+        }
+    </script>
+</body>
+</html>

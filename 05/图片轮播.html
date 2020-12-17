@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="../css/reset.css" rel="stylesheet">
+    <style>
+        .outer {
+            margin: 50px auto;
+            width: 500px;
+            position: relative;
+        }
+
+        .box {
+            overflow: hidden;
+
+        }
+
+        .con {
+            display: flex;
+            width: 4000px;
+        }
+
+        .con img {
+            width: 500px;
+            height: 300px;
+        }
+
+        .move .left,
+        .move .right {
+            width: 40px;
+            height: 40px;
+            line-height: 35px;
+            border-radius: 50%;
+            position: absolute;
+            background-color: pink;
+            font-size: 35px;
+            text-align: center;
+            color: palevioletred;
+        }
+
+        .move .left {
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+
+        }
+
+        .move .right {
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+        }
+
+        .list {
+            display: flex;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+
+        }
+
+        .list li {
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background-color: palevioletred;
+            margin: 0 10px;
+        }
+
+        .list .active {
+            background-color: purple;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="outer">
+        <div class="box">
+            <div class="con">
+                <img src="../img/02.jpg">
+                <img src="../img/03.jpg">
+                <img src="../img/04.jpg">
+                <img src="../img/05.jpg">
+                <img src="../img/06.jpg">
+                <img src="../img/02.jpg">
+            </div>
+            <div class="move">
+                <div class="left">&lt</div>
+                <div class="right">&gt</div>
+            </div>
+            <ul class="list">
+                <li class="active"></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        var Obox = document.querySelector('.box')
+        var Oimg = document.querySelectorAll('.box .con img')
+        var Oleft = document.querySelector('.left')
+        var Oright = document.querySelector('.right')
+        var Oli = document.querySelectorAll('.list li')
+        var MoveTimer = null;
+        var ChangeTimer = null;
+
+
+        var v = 0;//定义一个变量，代表图片下标
+
+        //移动动画
+        function Move() {
+            var StartLcation = Obox.scrollLeft;
+            var EndLcation = v * Oimg[0].offsetWidth;
+            var Starttep = 0;
+            var Endtep = 60;
+            var Everytep = (EndLcation - StartLcation) / (Endtep - Starttep)
+            MoveTimer = setInterval(function () {
+                StartLcation += Everytep;
+                Starttep++;
+                if (Starttep >= Endtep) {
+                    clearInterval(MoveTimer)
+                }
+                Obox.scrollLeft = StartLcation
+            }, 10)
+
+        }
+
+        //自动播放
+        function auto() {
+            ChangeTimer = setInterval(function () {
+                clearInterval(MoveTimer)
+                v++;
+                if (v >= Oimg.length) {
+                    v = 1;
+                    Obox.scrollLeft = 0;
+                }
+
+                Move();
+                list();
+
+            }, 2000)
+        }
+        auto();
+
+        //点击右箭头播放
+        Oright.onclick = function () {
+            clearInterval(MoveTimer)
+            clearInterval(ChangeTimer)
+            v++;
+            if (v >= Oimg.length) {
+                v = 1;
+                Obox.scrollLeft = 0;
+            }
+            Move();
+            list();
+            auto();
+        }
+        //点击左箭头
+        Oleft.onclick = function () {
+            clearInterval(MoveTimer)
+            clearInterval(ChangeTimer)
+            v--;
+            if (v < 0) {
+                v = Oimg.length - 2;
+                Obox.scrollLeft = (Oimg.length-1) * Oimg[0].offsetWidth;
+            }
+            Move();
+            list();
+            auto();
+        }
+
+        //点击小圆点
+        Oli.forEach(function (item, index) {
+            item.onclick = function () {
+                Oli.forEach(function (item, index) {
+                    item.classList.remove('active')
+                    
+                })
+                item.classList.add('active')
+
+                v = index-1;
+            
+                clearInterval(MoveTimer)
+                clearInterval(ChangeTimer)
+                v++;
+             Obox.scrollLeft = v * Oimg[index].offsetWidth;
+                
+
+
+                Move();
+                list();
+                auto();
+            }
+           
+
+        })
+
+        //小圆点变色
+        function list() {
+            Oli.forEach(function (item, index) {
+                var i = v;
+                if (i === 5) {
+                    i = 0;
+                }
+                if (index === i) {
+                    item.classList.add("active");
+                } else {
+                    item.classList.remove("active");
+                }
+            })
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            height: 3000px;
+        }
+
+        .top {
+            width: 143px;
+            height: 151px;
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            background-image: url(../img/01.png);
+            display: none
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="top"></div>
+    </div>
+
+    <script>
+        var Obox = document.querySelector('.box')
+        var Otop = document.querySelector('.top')
+        var Timertop = null;
+
+        window.onscroll = function () {
+            if (window.pageYOffset > 500) {
+                Otop.style.display = "block";
+            } else {
+                Otop.style.display = "none";
+            }
+        }
+
+        Otop.onclick = function () {
+
+            clearInterval(Timertop)
+            //当前滚动条位置
+            var start = window.pageYOffset;
+            //滚动条结束位置
+            var end = 0;
+            //起始步数
+            var startTep = 0;
+            //结束步数
+            var endTep = 100;
+
+            //每一步的距离
+
+            var everyTep = (end - start) / (endTep - startTep);
+
+            //开始动画
+            Timertop = setInterval(function () {
+                start += everyTep;
+                startTep++;
+                if (startTep >= endTep) {
+                    clearInterval(Timertop)
+                }
+                window.scrollTo(0, start);
+            })
+        }
+    </script>
+</body>
+
+</html>

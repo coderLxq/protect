@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="box" value="请输入电话号码">
+
+    <script>
+        var Obox = document.getElementById('box')
+
+        //获取焦点
+        Obox.onfocus = function () {
+            //判断value值
+            if (Obox.value === "请输入电话号码") {
+                Obox.value = '';
+            }
+        }
+        //失去焦点
+        Obox.onblur=function(){
+             //判断value值
+            if(Obox.value===''){
+                Obox.value="请输入电话号码";
+            }
+        }
+    </script>
+</body>
+
+</html>
