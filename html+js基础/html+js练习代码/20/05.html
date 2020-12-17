@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>日历</title>
+    <style>
+
+    </style>
+</head>
+
+<body>
+    <script>
+        //上个月天数
+        var day = 30;
+        //上个月剩余的天数
+        var first = 1;
+        //这个月的天数
+        var days = 31;
+        //下个月开始的天数
+        var last = 42 - first - days;
+        //计数器
+        var count = 1;
+        //选中指定日期
+        var nowdays = 24;
+        document.write('<table border="1" cellspacing="0" width="400"');
+        document.write('<tr>');
+        document.write('<td >一</td>');
+        document.write('<td >二</td>');
+        document.write('<td >三</td>');
+        document.write('<td >四</td>');
+        document.write('<td >五</td>');
+        document.write('<td >六</td>');
+        document.write('<td >日</td>');
+        document.write('</tr>');
+        document.write('<tr>');
+        //前面的空格（的第一部分)
+        for (var i = 1; i <= first; i++) {
+            document.write('<td>' + (day - (first - i)) + '</td>');
+            if (count % 7 === 0) {
+                document.write('<tr></tr>');
+            }
+            count++;
+        }
+        //中间1-30的部分
+        for (var j = 1; j <= days; j++) {
+            if (j === nowdays) {
+                var z = 'background-color:red;';
+            } else {
+                var z = '';
+            }
+            document.write('<td style=' + z + '>' + j + '</td>');
+            if (count % 7 === 0) {
+                document.write('<tr></tr>');
+            }
+            count++;
+        }
+
+        for (var k = 1; k <= last; k++) {
+            document.write('<td >' + k + '</td>');
+            if (count % 7 === 0) {
+                document.write('<tr></tr>');
+            }
+            count++;
+        }
+    </script>
+</body>
+
+</html>

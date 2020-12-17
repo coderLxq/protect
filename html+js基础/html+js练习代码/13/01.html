@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>过度</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            background-color: black;
+
+            transition-property: height;
+            transition-duration: 4S;/*过度的时间*/
+            transition-delay: 1s;/*过度效果延迟一秒开始*/
+            transition-timing-function: linear;/*过度的方式，匀速过度*/
+        }
+        div:hover{
+            width: 500px;
+            height: 500px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

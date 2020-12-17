@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>只会关心对象本身，而不会在乎他的行为</title>
+</head>
+<body>
+    <script>
+            var yazi = {
+                name:'唐老鸭',
+                color:'白色',
+                say:function() {
+                    console.log('咯咯咯');
+                }
+            }
+
+            var ji ={
+                name:'火鸡',
+                color:'red',
+                say:function(){
+                    console.log('咯咯咯');
+                }
+            }
+
+            var animal=[yazi,ji];
+            for(var i=0;i<=animal.length;i++){
+                console.log(animal[i].name);
+            }
+    </script>
+</body>
+</html>

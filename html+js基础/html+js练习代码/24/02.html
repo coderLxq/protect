@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = [
+            1, 2, 3,
+            [4, 5, 6],
+            [1, 2, 3, 4, 5, 6, [1, 2, 3, 4, 5]]
+        ];
+        function text(arr) {
+            var count = 0;
+            for (var i = 0; i < arr.length; i++) {
+                if (Array.isArray(arr[i])) {
+                    count += text(arr[i]);
+                }
+                count++;
+            }
+            return count;
+        }
+        console.log(text(a));
+
+    </script>
+</body>
+
+</html>

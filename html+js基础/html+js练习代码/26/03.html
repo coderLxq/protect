@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,sex){
+            this.name=name;
+            this.sex=sex;
+            this.say=function(){
+                console.log('哈哈')
+            }
+             return [2,2];//构造函数可以使用return 如果返回的是基本类型则忽略，如果返回的是引用类型，则返回他的值
+             //如果没有return 则返回新生成的对象
+        }
+        var a = new Person('a','b');
+        console.log(a)
+    </script>
+</body>
+</html>

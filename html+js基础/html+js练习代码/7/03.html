@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>精灵图</title>
+    <style>
+        body{
+            background-color: #cccccc;
+        }
+        .box{
+            /* border: 1px solid black; */
+            text-align: center;
+            width: 190px;
+            background-color:white;
+        }
+        .box1{
+            display: inline-block;
+            width: 60px;
+        }
+        .box2{
+            width: 25px;
+            height: 25px;
+            margin: 5px auto;
+            background-image: url(../img/Snipaste_2020-11-06_10-26-03.png);
+        }
+        div span{
+            font-size: 12px;
+        }
+        .box>.box1:last-child{
+            margin-bottom: 8px;
+        }
+        .box2.a:hover{
+            background-image: url(../img/sprite.png);
+            background-position: -1094px -56px !important;
+        }
+        .box2.b:hover{
+            background-image: url(../img/sprite.png);
+            background-position: -1290px -56px !important;
+        }
+        .box2.c:hover{
+            background-image: url(../img/sprite.png);
+            background-position: -140px -56px !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div class="box1">
+            <div class="box2 a" style="background-position: -22px -55px;"></div>
+                <span>话费</span>
+        </div>
+        <div class="box1">
+            <div class="box2 b" style="background-position: -84px -55px;"> </div>
+                <span>机票</span>
+        </div>
+        <div class="box1">
+            <div class="box2 c" style="background-position: -148px -55px;"> </div>
+                <span>酒店</span>
+        </div>
+        <div class="box1">
+            <div class="box2" style="background-position: -22px -115px;"> </div>
+                <span>游戏</span>
+        </div>
+        <div class="box1">
+            <div class="box2" style="background-position: -85px -115px;"> </div>
+                <span>加油卡</span>
+        </div>
+        <div class="box1">
+            <div class="box2" style="background-position: -150px -115px;"> </div>
+                <span>火车票</span>
+        </div>
+        <div class="box1">
+            <div class="box2" style="background-position: -20px -175px;"> </div>
+                <span>众筹</span>
+        </div>
+        <div class="box1">
+            <div class="box2" style="background-position: -85px -175px;"> </div>
+                <span>理财</span>
+        </div>
+        <div class="box1">
+            <div class="box2" style="background-position: -150px -175px;"> </div>
+                <span>白条</span>
+        </div>
+        <div class="box1">
+            <div class="box2" style="background-position: -20px -235px;"> </div>
+                <span>电影票</span>
+        </div>
+        <div class="box1">
+            <div class="box2" style="background-position: -85px -235px;"> </div>
+                <span>企业购</span>
+        </div>
+        <div class="box1">
+            <div class="box2" style="background-position: -148px -235px;"> </div>
+                <span>礼品卡</span>
+        </div>
+        </div>
+       
+    </div>
+</body>
+</html>

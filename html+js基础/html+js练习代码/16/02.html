@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>苹果导航条</title>
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../appleHeader/iconfont.css">
+    <style>
+        #box{
+            background-color: black;
+            display: flex;
+            justify-content: space-between;
+        }
+        #box li{
+            height: 48px;
+            line-height: 48px;
+            margin-left: 10px;
+            margin-right: 10px;
+            color: #ffffff;
+            font-size: 20px;
+        }
+        .aa{
+            display: none;
+        }
+        @media (min-width: 768px){
+            .aa{
+                display: flex;
+                justify-content: space-evenly;
+                flex-grow: 0.8;
+                /* border: 1px solid red; */
+            }
+            #box li:nth-of-type(1){
+                display: none;
+            }
+            .aa>li>a{
+            font-size: 14px;
+            color: #ffffff;
+            }
+    
+            #box li:nth-of-type(2){
+                /* border: 1px solid red; */
+                flex-grow: 0.1;
+                text-align: center;
+                order: -1;
+            }
+            #box li:nth-of-type(3){
+                /* border: 1px solid red; */
+                flex-grow: 0.1;
+                text-align: center;
+            }
+            #box>li{
+                font-size: 20px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <ul id="box">
+        <li class="iconfont icon-caidan"></li>
+        <ul class="aa">
+            <li>
+                <a href="#">Mac</a>
+            </li>
+            <li>
+                <a href="#">IPad</a>
+            </li>
+            <li>
+                <a href="#">iPhone</a>
+            </li>
+            <li>
+                <a href="#">Watch</a>
+            </li>
+            <li>
+                <a href="#">Music</a>
+            </li>
+            <li>
+                <a href="#">技术支持</a>
+            </li>
+            <li class="iconfont icon-search"></li>
+        </ul>
+        <li class="iconfont icon-pingguo"></li>
+        <li class="iconfont icon-gouwudai"></li>
+        </ul>
+</body>
+</html>

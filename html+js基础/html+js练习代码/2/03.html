@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>表格</title>
+    <style>
+       
+        .table{
+            width: 700px;
+            height: 400px;
+            background-color: yellow;
+        }
+        .id{
+            width: 200px;
+        }
+    </style>
+</head>
+<body>
+    <table class="table" border="1" cellspacing="0"><!--cellspacing属性：单元格与单元格之间的距离-->
+        <tr>
+            <!--colspan属性：规定单元格可以横跨的列数-->
+            <td colspan="3" align="center">星期一菜谱</td>
+        </tr>
+            <tr> 
+                <td rowspan="2">素菜</td>
+                <td>青草茄子</td>
+                <td>花椒扁豆</td>
+            </tr>
+            <tr> 
+                <td>小葱豆腐</td>
+                <td>炒白菜</td>
+            </tr>
+            <tr>
+                <!--rowspan属性：规定单元格可以竖跨的行数-->
+                <td rowspan="2">荤菜</td>
+                <td>油焖大虾</td>
+                <td>海参鱼翅</td>
+            </tr>
+            <tr>
+                <td>红烧肉<img class="id" src="../img/1.jpg"></td>
+                <td>烤全羊</td>
+            </tr>
+    </table>
+</body>
+</html>

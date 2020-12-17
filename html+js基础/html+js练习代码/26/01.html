@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function Person(name, sex) {
+            this.name = name;
+            this.sex = sex;
+            this.say = function () {
+                console.log('哈哈哈')
+            }
+        }
+        var a = new Person('时光', '男');
+        a.say();
+        console.log(a)
+
+        console.log(a.constructor == Person);//判断a对象是不是Person实例化出来的
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>商品展示</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        ul{
+            list-style: none;
+            width: 1010px;
+            margin: 100px auto;
+            /* border: 1px solid red; */
+            font-size: 0;
+        }
+        ul li{
+            float: left;
+            margin: 10px;
+            position: relative;
+        }
+    
+        ul::after{
+            content: '';
+            display: block;
+            clear: both;
+        }
+        ul li img{
+            border-radius: 5px;
+        }
+        ul li a::before{
+            content: '';
+            border:10px solid rgba(255,255,255,.5);
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: none;
+        }
+        ul li a:hover::before{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <a href="#">
+            <img src="../img/x1.jpg">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+            <img src="../img/x2.jpg">
+            </a>
+        </li>
+        <li>
+            <a href="#">
+            <img src="../img/x3.jpg">
+            </a>
+        </li>
+    </ul>
+</body>
+</html>

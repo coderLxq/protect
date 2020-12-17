@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var age=12;
+        if(age>=0 && age<=12){
+            console.log('儿童')
+        }else if(age>=13 && age<18){
+            console.log('青少年')
+        }else if(age>=18 && age<=29){
+            console.log('年轻人')
+        }else if(age>=30 && age<=59){
+            console.log('中年人')
+        }else if(age>=60 && age<=120){
+            console.log('老年人')
+        }else{
+            console.log('不在考虑范围')
+        }
+
+        var year = 2040;
+        if((year % 4==0 && year % 100!=0) || year % 400==0){
+            document.write('闰年')
+        }else{
+            document.write('平年')
+        }
+    </script>
+</body>
+</html>

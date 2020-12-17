@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>对象</title>
+</head>
+
+<body>
+    <script>
+        var person = {
+            name:'时光',
+            sex:'男',
+            age:'16',
+            say:function(){
+                console.log('我是高手');
+            }
+        }
+        console.log(person);
+        person.name='哈哈' //修改对象属性的值
+        console.log(person.name);
+        delete person.say; //删除属性
+        console.log(person);
+        person.height='170';//增加属性
+        console.log(person);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="../css/reset.css">
+    <link rel="stylesheet" type="text/css" href="../css/font-awesome.css">
+    <title>旅游网</title>
+    <style>
+        html{
+            font-size: 5.3333vw;
+        }
+        body{
+            width: 100vw;
+        }
+        #top{
+            width: 100vw;
+            height: calc(calc(1rem*120)/40);
+            background-color:rgb(93,202,207);
+            display: flex;
+            padding: 0 calc(calc(1rem*12)/40);
+            box-sizing: border-box;
+            justify-content: space-between;
+            align-items: flex-end;
+        }
+        #top div a{
+            font-size: calc(calc(1rem*56)/40);
+            color: #fff;
+            margin-bottom:calc(calc(1rem*12)/40);
+        }
+        #top form{
+            width: calc(calc(1rem*522)/40);
+            height: calc(calc(1rem*56)/40);
+            margin-bottom:calc(calc(1rem*12)/40);
+        }
+        #top form input{
+            width: 100%;
+            height: 100%;
+            box-sizing: border-box;
+            outline: none;
+            border: 0;
+            padding-left: calc(calc(1rem*26)/40);
+            border-radius:calc(calc(1rem*10)/40);
+            font-size:calc(calc(1rem*28)/40) ;
+        }
+      #top #pho{
+          width: calc(calc(1rem*56)/40);
+          height:calc(calc(1rem*56)/40);
+          border-radius: 50%;
+          /* border: 1px solid red; */
+          overflow: hidden;
+          margin-bottom:calc(calc(1rem*12)/40);
+      }
+      #top #pho img{
+          width: 100%;
+          height: 100%;
+      }
+      #bottom{
+          border-top: 1px solid rgba(0,0,0,.1);
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          width: 100%;
+          height:calc(calc(1rem*94)/40) ;
+          padding: 0 calc(calc(1rem*20)/40);
+          box-sizing: border-box;
+      }
+      #bottom ul{
+          display: flex;
+          height: 100%;
+          justify-content: space-between;
+      }
+      #bottom ul li{
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         flex-direction: column;
+      }
+      #bottom ul li span{
+        font-size: calc(calc(1rem*36)/40);
+      }
+      #bottom ul li{
+          color: #5DCACF;
+      }
+      #order{
+          width: 100%;
+      }
+      #order ul{
+          width: 100%;
+          height: calc(calc(1rem*140)/40);
+          display: flex;
+          justify-content: space-evenly;
+          margin-top: calc(calc(1rem*30)/40);
+      }
+      #order ul li{
+        padding-left: calc(calc(1rem*12)/40);
+        padding-right: calc(calc(1rem*12)/40);
+        box-sizing: border-box;
+        text-align: center;
+      }
+      #order ul li div{
+        border-radius: 50%;
+        display: inline-block;
+        width: calc(calc(1rem*98)/40);
+        height: calc(calc(1rem*98)/40);
+        font-size: calc(calc(1rem*65)/40);
+        
+      }
+      #order ul li:first-child div{
+        background-color: #F9699C;
+      }
+      #order ul li:nth-of-type(2) div{
+        background-color: #FF797C;
+      }
+      #order ul li:nth-of-type(3) div{
+        background-color: #2F9AD7;
+      }
+      #order ul li:nth-of-type(4) div{
+        background-color: #FFB802;
+      }
+      #order ul li div span{
+          color: #fff;
+      }
+      #order ul li strong{
+        margin-top: calc(calc(1rem*4)/40);
+          display: inline-block;
+          font-weight: normal;
+      }
+      #tourism{
+          width: 100%;
+      }
+      #tourism ul{
+          display: flex;
+          width: 100%;
+          height:calc(calc(1rem*115)/40) ;
+          justify-content: space-between;
+          margin-top:calc(calc(1rem*50)/40) ;
+          
+      }
+      #tourism ul li{
+          margin-left:calc(calc(1rem*12)/40) ;
+          margin-right: calc(calc(1rem*12)/40);
+          display: flex;
+          height: 100%;
+          width:calc(calc(1rem*240)/40) ;
+          background-color: #EEEEEE;
+      }
+      #tourism ul li i{
+          box-sizing: border-box;
+          padding-top: calc(calc(1rem*30)/40);
+          padding-left: calc(calc(1rem*10)/40);
+          font-size:calc(calc(1rem*50)/40) ;
+      }
+      #tourism ul li h3{
+          margin-left:calc(calc(1rem*80)/40) ;
+          margin-top:calc(calc(1rem*-60)/40) ;
+          font-weight: bold;
+      }
+      #tourism ul li span{
+          display: inline-block;
+          margin-left:calc(calc(1rem*80)/40) ;
+          font-size: calc(calc(1rem*12)/40);
+      }
+      #tourism ul li:first-child i{
+          color:#5FC9CB;
+      }
+      #tourism ul li:nth-of-type(2) i{
+          color:#5FC9CB;
+      }
+      #tourism ul li:nth-of-type(3) i{
+          color:#F66C36;
+      }
+      #photo{
+          width: calc(calc(1rem*720)/40);
+          height: calc(calc(1rem*200)/40);
+          margin-top:calc(calc(1rem*30)/40) ;
+          margin-left:calc(calc(1rem*12)/40) ;
+          margin-right:calc(calc(1rem*12)/40) ;
+      }
+      #photo img{
+          height: 100%;
+          width: 100%;
+      }
+      #found{
+          width: 100%;
+          display: flow-root;
+          margin-top:calc(calc(1rem*30)/40) ;
+      }
+      .found-a span{
+          margin-left:calc(calc(1rem*12)/40) ;
+          margin-right:calc(calc(1rem*12)/40) ;
+        
+      }
+    .found-a span:first-child{
+        font-weight: bold;
+        float: left;
+        font-size: calc(calc(1rem*30)/40);
+      }
+      .found-a span:last-of-type{
+          float: right;
+          color: #C9C9C9;
+          font-size: calc(calc(1rem*26)/40);
+      }
+      #japen{
+          margin-top:calc(calc(1rem*30)/40) ;
+          display: flow-root;
+          margin-left:calc(calc(1rem*12)/40) ;
+          margin-right:calc(calc(1rem*12)/40) ;
+          width: 100%;
+          height:calc(calc(1rem*200)/40) ;
+          position: relative;
+      }
+      #japen img{
+        float: left;
+        height:calc(calc(1rem*200)/40) ;
+      }
+      #japen ul{
+          height: 100%;
+          display: flow-root;
+      }
+      #japen ul li{
+         padding-left:calc(calc(1rem*14)/40) ;
+          margin-left:calc(calc(1rem*12)/40);
+          float: left;
+      }
+      #japen ul li:first-child{
+          font-size:calc(calc(1rem*30)/40);
+      }
+      #japen ul li:nth-of-type(2){
+         
+          padding-top:calc(calc(1rem*20)/40) ;
+          box-sizing: border-box;
+      }
+      #japen ul li:nth-of-type(2) a{
+            color: #5FC9CB;
+            font-size:calc(calc(1rem*26)/40);
+      }
+      #japen ul li:nth-of-type(3){
+          position: absolute;
+          bottom: 0;
+      }
+      #japen ul li:nth-of-type(3) span{
+        color: #5FC9CB;
+      }
+      #japen ul li:nth-of-type(3) strong{
+        margin-left: calc(calc(1rem*160)/40);
+        color: red;
+      }
+    </style>
+</head>
+<body>
+        <div id="box">
+            <div id="top">
+                <div>
+                    <a href="#" class="fa fa-navicon"></a>
+                </div>
+                <form action="#" method="POST">
+                    <input type="text" name="Search" placeholder="请输入你的地点/酒店/景点">
+                </form>
+                <div id="pho">
+                    <img src="../img/1.jpg">
+                </div>
+            </div>
+            <div id="order">
+                <ul>
+                    <li>
+                        <a href="#">
+                        <div>
+                             <span  class="fa fa-building"></span>
+                        </div>
+                        <strong>酒店预订</strong>
+                        </a>
+                    </li>
+                    <li>
+                    <a href="#">
+                        <div>
+                        <span class="fa fa-home"></span>
+                        </div>
+                        <strong>附近酒店</strong>
+                        </a>
+                    </li>
+                    <li>
+                    <a href="#">
+                        <div>
+                            <span class="fa fa-dollar"></span>
+                        </div>
+                        <strong>今日特价</strong>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <div>
+                                <span class="fa fa-university"></span>
+                            </div>
+                            <strong>景点推荐</strong>
+                            </a>
+                        </li>
+                </ul>
+            </div>
+            <div id="tourism">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-car"></i>
+                            <h3>自驾游</h3>
+                            <span>自定义行程</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-flag"></i>
+                            <h3>跟团游</h3>
+                            <span>放心省心游玩</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-group"></i>
+                            <h3>结伴游</h3>
+                            <span>一起才好玩</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="photo">
+                <img src="../img/繁夕设计_03.png">
+            </div>
+            <div id="bottom">
+                <ul>
+                    <li>
+                        <span  class="fa fa-home"></span>
+                        <a href="#">首页</a>
+                    </li>
+                    <li>
+                        <span  class="fa fa-compass"></span>
+                        <a href="#">发现</a>
+                    </li>
+                    <li>
+                        <span  class="fa fa-headphones"></span>
+                        <a href="#">客服</a>
+                    </li>
+                    <li>
+                        <span class="fa fa-user-o"></span>
+                        <a href="#">我的</a>
+                    </li>
+                </ul>
+            </div>
+            <div id="found">
+                <div class="found-a">
+                    <span>发现世界</span>
+                    <span>更多>></span>
+                </div>
+            </div>
+            <div id="japen">
+                <img src="../img/繁夕设计_06.png">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span>日本大阪5日4晚自由行(入住)东心斋桥微笑尊贵酒店...</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-map-marker"></i>
+                            <span>日本大阪</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>已售：35件</span>
+                            <strong>￥18000起</strong>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div id="japen">
+                <img src="../img/繁夕设计_09.png">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span>首晚石和当地酒店，后3晚升级东京新宿华盛顿酒店，...</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-map-marker"></i>
+                            <span>日本大阪</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span>已售：35件</span>
+                            <strong>￥16000起</strong>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</body>
+</html>

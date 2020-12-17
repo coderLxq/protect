@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>反转数组</title>
+</head>
+
+<body>
+    <script>
+        //定义一个空数组，倒叙输出原数组，放入新数组
+        var arr = [1, 2, 3, 4, 5, 1]
+        var arr1 = [];
+        for (i = arr.length; i >= 0; i--) {
+            arr1[arr1.length] = arr[i];
+        }
+        console.log(arr1);
+
+        var arr2 = [1, 2, 3, 4, 5]
+        for (i = 0; i < arr2.length / 2; i++) {//i=0 0<2.5 ture
+
+            var temp = arr2[i];//temp = arr2[1]
+            arr2[i] = arr2[arr2.length - 1 - i];// arr2[1] = arr2[5-1-1]  arr2[1] = arr2[3]
+            arr2[arr2.length - 1 - i] = temp;// arr2[3] = arr2[1]
+        }
+        console.log(arr2);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            margin: 20px auto;
+            width: 250px;
+            /* border: 1px solid red; */
+        }
+        .radio-box .radio {
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+            border: 1px solid aqua;
+            cursor: pointer; 
+        }
+        .radio-box input:checked+.radio::after {
+            content: ""; 
+            display: block;
+            width: 6px;
+            height: 6px; 
+            border-color:yellow; 
+             margin-left: 3px;
+            margin-top: 3px;
+        }
+        /*点击radio变色*/
+        .radio-box input:checked+.radio {
+           background-color:yellow;
+        }
+        /*设置成空*/
+        .radio-box input[name="tianqi"] {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+        <div class="box">
+            <label class="radio-box">
+            <input type="radio" name="tianqi">
+            <span  class="radio"></span>
+            <span>今天天气真好</span>
+            </label>
+            <br>
+            <label class="radio-box">
+            <input type="radio" name="tianqi">
+            <span  class="radio"></span>
+            <span>明天天气真好</span>
+            </label>
+            <br>
+            <label class="radio-box">
+            <input type="radio" name="tianqi">
+            <span  class="radio"></span>
+            <span>后天天气真好</span>
+            </label>
+</div>
+</body>
+</html>

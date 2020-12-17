@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单选框、复选框</title>
+</head>
+<body>
+        <div>
+            <form action="#" method="GET">
+                邮箱地址<input type="text" name="email"><br>
+                密　　码<input type="password" name="password"><br>
+                确认密码<input type="password" name="password1"><br>
+                上传头像<input type="file" name="File"><br>
+                性　　别<label for="nv"><input type="radio" id="nv" value="WoMan" checked name="sex">&nbsp;&nbsp;女</label>
+                <label for="nan">&nbsp;&nbsp;男<input type="radio" id="nan" value="Man" name="sex"><br></label>
+                兴　　趣<label for="H1"><input type="checkbox" id="H1" name="hobby" value="1">登山</label>
+                <label for="H2"><input type="checkbox" id="H2" name="hobby" value="2">郊游</label>
+                <label for="H3"><input type="checkbox" id="H3" name="hobby" value="3">钓鱼</label>
+                <label for="H4"><input type="checkbox" id="H4" name="hobby" value="4" checked>养鱼</label>
+                <label for="H5"><input type="checkbox" id="H5" name="hobby" value="5">饲养宠物</label>
+                <label for="H6"><input type="checkbox" id="H6" name="hobby" value="6">网络游戏</label><br>
+                国　　家<select name="city">
+                    <option value="1">中国</option>
+                    <option value="2">日本</option>
+                    <option value="3" selected>韩国</option>
+                    <option value="4">美国</option>
+                </select><br>
+                <input type="submit" value="登录" id> 
+            </form>
+        </div>
+</body>
+</html>

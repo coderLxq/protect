@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+     <script>
+         function person(){
+             console.log(123);
+         }
+
+         function dog(){
+
+         }
+
+         var a = new person();//使用new调用的函数和普通的函数调用的区别：
+         //new调用的不光执行函数中的代码还会返回一个对象，如果是普通的函数调用方式调用的函数只会执行其中的代码
+         var b = new dog();
+         console.log(a)
+
+        //  person();
+        //  console.log(a instanceof dog);//判断 a是不是dong这个类型 flase
+        //  console.log(b instanceof dog);//判断 b是不是dong这个类型 true
+     </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组表格</title>
+</head>
+
+<body>
+    <script>
+        var performeres = [
+            //编号, 演员姓名, 饰演角色, 性格
+            [1, '孙红雷', '何辅堂', '为人正直不阿，欺强怜弱，善于机变。'],
+            [2, '巍子', '魏正先', '鹰视狼顾，心狠手黑。'],
+            [3, '陈数', '程立雪', '气质如兰，观之可亲，思想卓荦，才华压众。'],
+            [4, '郭珍霓', '刘二泉', '动不便，但若论手段心机，十个健全人也不是她的对手。'],
+            [5, '陈祉希', '朱彩灵', '刀马旦出身，水般柔美，火样性格。含威不露，顾盼神飞。']
+        ];
+        var str = "<table border='1' width='800'>";
+        for (var i = 0; i < performeres.length; i++) {
+            str += '<tr>';
+            str += '<td>' + performeres[i][0] + '</td>';
+            str += '<td>' + performeres[i][1] + '</td>';
+            str += '<td>' + performeres[i][2] + '</td>';
+            str += '<td>' + performeres[i][3] + '</td>';
+            str += '</tr>';
+        }
+        str += '</table>';
+        document.write(str);
+        console.log(str);
+    </script>
+</body>
+
+</html>

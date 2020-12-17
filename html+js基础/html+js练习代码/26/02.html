@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var a = {};//== var a = new Object()
+        a.name = '时光';
+        console.log(a.constructor == Object);//实际上是在内部调用了`Object`，所以说生成对象的constructor指向了`Object`
+    </script>>
+
+</html>

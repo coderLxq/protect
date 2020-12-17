@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数可以作为参数传入到函数中</title>
+</head>
+<body>
+    <script>
+        function a1(fn){
+            fn();
+        }
+        function a2(){
+            console.log('今天天气真好');
+        }
+        function a3(){
+            console.log('明天天气真好');
+        }
+        a1(a2);
+        a1(a3);
+    </script>
+</body>
+</html>

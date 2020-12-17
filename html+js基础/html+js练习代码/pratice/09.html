@@ -1,0 +1,48 @@
+<!DOCTYPE?html>
+<html?lang="zh-CN">
+
+<head>
+    <meta?charset="UTF-8">
+    <title>Document</title>
+    <style>
+        .container {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            text-align: center;
+            font-size: 0;
+            white-space: nowrap;
+            overflow: auto;
+           
+        }
+
+        .container::after {
+            content: '';
+            display: inline-block;
+            height: 100%;
+            vertical-align: middle;
+            border: 1px solid black;
+        }
+
+        .box {
+            display: inline-block;
+            width: 500px;
+            height: 400px;
+            background-color: pink;
+            white-space: normal;
+            vertical-align: middle;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box"></div>
+    </div>
+</body>
+
+</html>

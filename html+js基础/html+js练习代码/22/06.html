@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组排重</title>
+</head>
+
+<body>
+    <script>
+        var arr = [1, 1, 2, 2, 3, 3, 4, 4, 5, 5];
+        var NewArr = [];
+        for (var i = 0; i < arr.length; i++) {
+            var a = true;
+            for (var j = 0; j < NewArr.length; j++) {
+                if (arr[i] === NewArr[j]) {
+                    a = false;
+                    break;
+                }
+            } if (a) {
+                NewArr[NewArr.length]=arr[i];
+            }
+        }
+        console.log(NewArr)
+    </script>
+</body>
+
+</html>

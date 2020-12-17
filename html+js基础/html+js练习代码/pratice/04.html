@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>图片水平排列</title>
+    <style>
+        ul{
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            width: 2300px;
+        }
+        ul li{
+            display: inline-block;/*因为图片默认排序是块内元素独占一行 所以要把它变成行内块元素才会水平排列*/
+            margin: 10px 10px 0px 10px;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <img src="../img/1.jpg">
+        </li>
+        <li>
+            <img src="../img/1.jpg">
+        </li>
+        <li>
+            <img src="../img/1.jpg">
+        </li>
+    </ul>
+</body>
+</html>

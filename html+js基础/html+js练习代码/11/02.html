@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多选款点击改变样式</title>
+</head>
+<style>
+    html,
+    body,
+    ul,
+    li {
+        padding: 0;
+        margin: 0;
+    }
+
+    #checkbox {
+        margin: 0 auto;
+        margin-top: 100px;
+        width: 500px;
+        border: 1px solid transparent;
+
+        list-style: none;
+    }
+
+    #checkbox input[type="checkbox"][name="hobby[]"] {
+        display: none;
+    }
+
+    #checkbox input[type="checkbox"][name="hobby[]"]+label {
+        display: inline-block;
+        /* width:145px; */
+        height: 30px;
+        line-height: 30px;
+        /* border: 1px solid green; */
+        font-size: 12px;
+        margin-top: 20px;
+        padding-right: 30px;
+
+        background-color: rgb(173, 215, 240);
+        color: #FFF;
+    }
+
+    #checkbox input[type="checkbox"][name="hobby[]"]+label::before {
+        content: 'x';
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 16px;
+        margin-right: 20px;
+    }
+
+    #checkbox input[type="checkbox"][name="hobby[]"]:checked+label::before {
+        content:'✔';
+    }
+
+    #checkbox input[type="checkbox"][name="hobby[]"]:checked+label{
+        background-color:rgb(36, 137, 197);
+    }
+</style>
+</head>
+
+<body>
+<ul id="checkbox">
+    <li>
+        <input type="checkbox" name="hobby[]" id="h1" />
+        <label for="h1">贤淑端庄型</label>
+    </li>
+    <li>
+        <input type="checkbox" name="hobby[]" id="h2" />
+        <label for="h2">温良贤惠型</label>
+    </li>
+    <li>
+        <input type="checkbox" name="hobby[]" id="h3" />
+        <label for="h3">清雅靓丽型</label>
+    </li>
+    <li>
+        <input type="checkbox" name="hobby[]" id="h4" />
+        <label for="h4">性感放浪型</label>
+    </li>
+</ul>
+</body>
+</html>

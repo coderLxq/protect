@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>响应式布局</title>
+    <link rel="styleSheet" type="text/css" href="../css/reset.css">
+    <style>
+        @font-face {
+			  font-family: 'iconfont';
+			  src: url('../font/iconfont.eot');
+			  src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+				  url('../font/iconfont.woff2') format('woff2'),
+				  url('../font/iconfont.woff') format('woff'),
+				  url('../font/iconfont.ttf') format('truetype'),
+				  url('../font/iconfont.svg#iconfont') format('svg');
+			}
+			.iconfont {
+			  font-family: "iconfont" !important;
+			  font-size: 16px;
+			  font-style: normal;
+			  -webkit-font-smoothing: antialiased;
+			  -moz-osx-font-smoothing: grayscale;
+            }
+            .box{
+                width:100%;
+                background-color:rgb(45, 67, 115);
+                border-bottom: 1px solid transparent;
+            }
+            .box h1{
+                height: 80px;
+                line-height: 80px;
+                text-align: center;
+                background-color:rgb(59, 89, 152);
+                color: #ffffff;
+            }
+           .box ul li{
+                height: 42px;
+                line-height: 42px;
+                font-size: 14px;
+                text-align: center;
+                margin: 6px 6px 0px 6px;
+                background-color:rgb(59, 89, 152);
+                border-radius: 3px;
+            }
+            .box ul li a{
+                color: #fff;
+            }
+            .box form{
+               height: 48px;
+               margin: 6px;
+               position: relative;
+               
+            }
+            .box form input{
+                box-sizing: border-box;
+                background-color:rgb(203, 217, 245);
+                text-align: center;
+                width: 100%;
+                height: 100%;
+                outline:none;
+                border-radius: 3px;
+                border: 0;
+            }
+            .box form button{
+                position: absolute;
+                top: 0;
+                right: 0;
+                width: 72px;
+                height: 48px;
+                outline:none;
+                background-color: transparent;
+                font-size: 24px;
+                color:rgb(160, 179, 220);
+                border: 0;
+            }
+            @media (min-width:768px){
+                .box h1{
+                    float:left;
+		            width:30%;
+		            height:44px;
+		            line-height:44px;
+		            font-size:20px;
+                }
+                .box ul{
+                    width:70%;
+		            height:44px;
+		            float:left;
+                }
+                .box ul li{
+                    width: 33.3333%;
+                    float: left;
+                    height: 44px;
+                    line-height: 44px;
+                    margin: 0;
+                    border-radius:0;
+                    
+                }
+                .box::after{
+                    content: "";
+                    display: block;
+                    clear: both;
+                }
+                .box form{
+                    float: left;
+                    width: 100%;
+                    margin: 0;
+                    margin-top: 6px;
+                    margin-bottom: 6px;
+                    padding-left: 6px;
+                    padding-right: 6px;
+                    box-sizing: border-box;
+                } 
+            }
+            @media (min-width:992px){
+                .box h1{
+                    width: 20%;
+                    float: left;
+                    height:44px;
+		            line-height:44px;
+                    font-size:20px;
+                    margin: 0;
+                    padding: 0;
+                }
+                .box ul{
+                    width:50%;
+                    height:44px;
+                    float:left;
+                    margin: 0;
+                    padding: 0;
+                }
+                .box ul li{
+                    width: 33.3333%;
+                    float: left;
+                    height: 44px;
+                    line-height: 44px;
+                    border-radius:0;
+                    margin: 0;
+                    padding: 0;
+            }
+                .box form{
+                    height: 44px;
+                    float: left;
+                    width: 30%;
+                    margin: 0;
+                    padding: 0;
+                }
+            }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>IBiji.Tech</h1>
+        <ul>
+            <li>
+                <a href="#">
+                    系列教程
+                </a>
+            <li>
+                <a href="#">
+                    实例教程
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    工具推荐
+                </a>
+            </li>
+        </ul>
+        <form action="#" method="POST">
+            <input type="text" name="serch" placeholder="分享技术成就你我！">
+            <button type="submit" class="iconfont">&#xe628;</button>
+        </form>
+    </div>
+</body>
+</html>

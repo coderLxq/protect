@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>幻灯片</title>
+    <style>
+       html body{
+           margin: 0px;
+           padding: 0px;
+           
+       }
+       .a{
+        margin: 0 auto;
+        width: 500px;
+       }
+       .b{
+           position: relative;
+           width: 100%;
+           height: 400px;
+       }
+       .b a{
+           position: absolute;
+           display: block;
+           width: 100%;
+           height: 100%;
+       }
+       .b a img{
+           width: 100%;
+           height: 100%;
+       }
+       .b a:first-child{
+           z-index: 1;
+       }
+       .b a:target{
+           z-index: 2;
+       }
+       ul{
+        margin:0;
+        padding:0;
+        list-style-type:none;
+         width:500px;
+        height:70px;
+        margin-top:10px;
+       }
+       ul li{
+          height: 100%;
+           float: left;
+           margin: 5px;
+       }
+       ul li img{
+           height: 100%;
+       }
+    </style>
+</head>
+<body>
+    <div class="a">
+        <div class="b">
+            <a name="kof-01">
+                <img src="../img/kof-01.jpg">
+            </a>
+            <a name="kof-02">
+                <img src="../img/kof-02.jpg">
+            </a>
+            <a name="kof-03">
+                <img src="../img/kof-03.jpg">
+            </a>
+            <a name="kof-04">
+                <img src="../img/kof-04.jpg">
+            </a>
+            <a name="kof-05">
+                <img src="../img/kof-05.jpg">
+            </a>
+        </div>
+        <ul>
+            <li>
+                <a href="#kof-01">
+                    <img src="../img/kof-01.jpg" />
+                </a>
+            </li>
+            <li>
+                <a href="#kof-02">
+                    <img src="../img/kof-02.jpg" />
+                </a>
+            </li>
+            <li>
+                <a href="#kof-03">
+                    <img src="../img/kof-03.jpg" />
+                </a>
+            </li>
+            <li>
+                <a href="#kof-04">
+                    <img src="../img/kof-04.jpg" />
+                </a>
+            </li>
+            <li>
+                <a href="#kof-05">
+                    <img src="../img/kof-05.jpg" />
+                </a>
+            </li>
+        </ul>
+    </div>
+</body>
+</html>

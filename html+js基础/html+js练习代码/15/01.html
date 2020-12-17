@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flex布局</title>
+    <style>
+        #f{
+                border:1px solid green;
+
+                display: flex;
+                width: 400px;
+
+                /* height:500px; */
+
+                /* flex-direction: row-reverse; */
+                /* flex-direction: column-reverse; */
+                /* flex-direction: column; */
+
+                /* height:800px; */
+
+                flex-wrap: wrap;
+                /* flex-wrap: wrap-reverse; */
+            }
+            #f div{
+                width:100px;
+                height:100px;
+            }
+            #f div:first-of-type{
+                background-color:green;
+            }
+            #f div:nth-of-type(2){
+                background-color:lawngreen;
+            }
+            #f div:nth-of-type(3){
+                background-color:yellowgreen;
+            }
+            #f div:nth-of-type(4){
+                background-color:greenyellow;
+            }
+            #f div:nth-of-type(5){
+                background-color:lightgreen;
+            }
+            #f div:nth-of-type(6){
+                background-color:seagreen;
+            }
+    </style>
+</head>
+<body>
+    <div id="f">
+        <div>1</div>
+        <div>2</div>
+        <div>3</div>
+        <div>4</div>
+        <div>5</div>
+        <div>6</div>
+    </div>
+</body>
+</html>

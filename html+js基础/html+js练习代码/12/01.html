@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QQ背景</title>
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        body>div:first-of-type{
+            height: 956px;
+            background-image: url(../img/01.jpg);
+            background-repeat: no-repeat;
+            background-position: top center;
+        }
+        body>div:nth-of-type(2){
+            height: 321px;
+            background-image: url(../img/02.png);
+            background-repeat: no-repeat;
+            background-position: top center;
+        }
+        body>div:nth-of-type(3){
+            height: 600px;
+            background-image: url(../img/03.jpg);
+            /* background-repeat: no-repeat; */
+            background-attachment: fixed;/*固定在当前窗口*/
+            background-size: cover;
+        }
+        .b{
+            margin:0 auto;
+            width:960px;
+            height: 584px;
+            /* border: 1px solid black; */
+            position: relative;
+        }
+        .b::before{
+            content: "";
+            position: absolute;
+            background-image: url(../img/05.png);
+            width:664px;
+            height:763px;
+            background-repeat: no-repeat;
+            bottom: 0;
+            left: 0;
+        }
+        .b::after{
+            content: "";
+            position: absolute;
+            background-image: url(../img/04.png);
+            width:487px;
+            height:107px;
+            right: 0px;
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+    <div class="a"></div>
+    <div class="b"></div>
+</body>
+</html>

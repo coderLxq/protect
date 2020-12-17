@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>骰子</title>
+    <style>
+        .box{
+            width: 400px;
+            height: 240px;
+            border: 1px solid black;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-content: space-evenly;
+        }
+      .blue{
+            height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-image: linear-gradient(blue,black);
+      }
+      .red{
+        height: 20px;
+            width: 20px;
+            border-radius: 50%;
+            background-image: linear-gradient(red,black);
+      }
+        .box>div{
+            width: 100px;
+            height: 100px;
+            border: 1px solid black;
+            display: flex;
+        }
+        .box div:first-of-type{
+            justify-content: center;
+            align-items: center;
+        }
+        .box div:nth-of-type(2){
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+        .box div:nth-of-type(3){
+            flex-direction: column;
+            justify-content: space-around;
+        }
+     
+      .box div:nth-of-type(3)>div:nth-of-type(2){
+                align-self: center;
+      }
+      .box div:nth-of-type(3)>div:nth-of-type(3){
+                align-self: flex-end;
+      }
+      .box div:nth-of-type(4){
+          justify-content: space-evenly;
+      }
+      .box div:nth-of-type(4)>div{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+      }
+      .box div:nth-of-type(5){
+        justify-content: space-evenly;
+        position: relative;
+      }
+      .box div:nth-of-type(5)>div{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+      }
+      .box div:nth-of-type(5)>div:nth-of-type(2){
+          position: absolute;
+          top: 50%;
+          left:50%;
+          transform: translate(-50%,-50%);
+      }
+      .box div:nth-of-type(6){
+        justify-content: space-evenly;
+      }
+      .box div:nth-of-type(6)>div{
+          display: flex;
+          flex-direction: column;
+          justify-content: space-around;
+      }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div>
+            <div class="red"></div>
+        </div>
+        <div>
+            <div class="blue"></div>
+            <div class="blue"></div>
+        </div>
+        <div>
+            <div class="blue"></div>
+            <div class="blue"></div>
+            <div class="blue"></div>
+        </div>
+        <div>
+            <div>
+                <div class="red"></div>
+                <div class="red"></div>
+            </div>
+            <div>
+                <div class="red"></div>
+                <div class="red"></div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+            </div>
+            <div class="blue"></div>
+            <div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+            </div>
+        </div>
+        <div>
+            <div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+            </div>
+            <div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+                <div class="blue"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

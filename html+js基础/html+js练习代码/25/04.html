@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>回调函数</title>
+</head>
+
+<body>
+    <script>
+        function demo(fn) {
+            for (i = 1; i <= 100; i++) {
+                if(fn(i)){
+                    console.log(i)
+                }
+               
+            }
+        }
+
+        demo(rule);
+        // demo(rule1);
+        // demo(rule2);
+        //判断偶数
+        function rule(n) {
+            if (n % 2 === 0) {
+                return true;
+            } else {
+                return false;
+            }
+        }
+        // console.log(rule(100));
+
+        //尾数含3的去处
+        function rule1(n) {
+            var last = parseInt(n / 1 % 10);
+            if (last === 3) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        // console.log(rule1(103));
+
+        //去除可以和五整除的数
+        function rule2(n) {
+            if (n % 5 === 0) {
+                return false;
+            } else {
+                return true;
+            }
+        }
+        // console.log(rule2(105));
+    </script>
+</body>
+
+</html>

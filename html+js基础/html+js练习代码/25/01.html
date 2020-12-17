@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function demo(arg){//hello
+            console.log(arg);//hello
+            arg="呵呵";//arg='呵呵'
+        }
+        var str='hello';
+        demo(str);
+        console.log(str);
+
+        function foo(arg){
+            arg[0]='哈哈'
+        }
+        var arr=[1,2,3,4];
+        foo(arr);//地址
+        console.log(arr);
+    </script>
+</body>
+</html>

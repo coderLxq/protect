@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>单选框点击改变样式</title>
+</head>
+<style>
+    html body{
+        margin: 0px;
+        padding: 0px;
+    }
+    form{
+        margin: 0 auto;
+        padding: 0px;
+        width: 500px;
+        border: 1px solid transparent;
+        margin-top: 100px;
+    }
+    form input[type="radio"][name="say"]{
+        display: none;
+    }
+    form input[type="radio"][name="say"] +label{
+        display: block;
+        width: 400px;
+        height: 20px;
+        line-height: 20px;
+        font-size: 14px;
+        margin-top: 10px;
+    }
+    form input[type="radio"][name="say"] +label::before{
+        content:"";
+        border: 1px solid #de8650;
+        width: 20px;
+        height: 20px;
+        float: left;
+        margin-right: 15px;
+    }
+    form input[type="radio"][name="say"]:checked +label::before{
+        content: "✓";
+        text-align: center;
+        background-color: #de8650;
+    }
+    form input[type="radio"][id="say4"]:checked +label::after{
+        content: "你的想法很危险啊！";
+        color: red;
+        font-size: 12px;
+        margin-left: 15px;
+    }
+</style>
+<body>
+    <form>
+        <input type="radio" name="say" id="say1">
+        <label for="say1">喝可乐</label>
+        <input type="radio" name="say" id="say2">
+        <label for="say2">喝雪碧</label>
+        <input type="radio" name="say" id="say3">
+        <label for="say3">喝芬达</label>
+        <input type="radio" name="say" id="say4">
+        <label for="say4">喝啤酒</label>
+    </form>
+</body>
+</html>

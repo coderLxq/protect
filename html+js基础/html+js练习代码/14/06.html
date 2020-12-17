@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鸟叔</title>
+    <style>
+        div{
+            width: 56px;
+            height: 100px;
+            /* border: 1px solid black; */
+            margin: 300px auto;
+            background-image: url(../img/dancer.png);
+            animation-name: dance;
+            animation-timing-function: steps(22);
+            animation-duration: 3s;
+           animation-iteration-count: infinite;
+        }
+        @keyframes dance{
+            0%{
+                background-position: 0px 0px;
+            }
+            100%{
+                background-position: -1229px 0px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+</body>
+</html>

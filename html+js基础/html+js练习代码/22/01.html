@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //在数组的指定位置加入元素
+        var colors = ['red', 'blue', 'yellow'];
+        for (var i = colors.length; i >= 3; i--) {
+            colors[i] = colors[i - 1];
+        }
+        colors[3] = '呵呵';
+        console.log(colors);
+
+        //删除数组中指定的元素
+        var color = ['red', 'blue', 'yellow'];
+        for (var i = 3; i < color.length; i++) {
+            color[i] = color[i - 1];
+        }
+        color.length--;
+        console.log(color);
+    </script>
+</body>
+
+</html>
